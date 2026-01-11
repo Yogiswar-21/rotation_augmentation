@@ -1,0 +1,168 @@
+.results-container {
+  width: 100%;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results-header {
+  margin-bottom: 25px;
+}
+
+.results-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.prediction-card {
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.prediction-card:hover {
+  transform: translateY(-2px);
+}
+
+.severity-high {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+}
+
+.severity-moderate {
+  background: linear-gradient(135deg, #ffd93d 0%, #ffb347 100%);
+  color: #333;
+}
+
+.severity-low {
+  background: linear-gradient(135deg, #6bcf7f 0%, #4ecdc4 100%);
+  color: white;
+}
+
+.severity-none {
+  background: linear-gradient(135deg, #95e1d3 0%, #a8e6cf 100%);
+  color: #333;
+}
+
+.prediction-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.severity-icon {
+  font-size: 2rem;
+}
+
+.prediction-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex: 1;
+  margin: 0;
+}
+
+.confidence-badge {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.advice-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.advice-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.advice-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.causes-card {
+  border-left: 4px solid #667eea;
+}
+
+.remedies-card {
+  border-left: 4px solid #764ba2;
+}
+
+.advice-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advice-icon {
+  font-size: 1.3rem;
+}
+
+.advice-content {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.remedies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.remedy-item {
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #764ba2;
+  transition: all 0.2s ease;
+}
+
+.remedy-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .advice-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .prediction-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
