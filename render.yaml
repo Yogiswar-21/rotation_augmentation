@@ -1,0 +1,30 @@
+services:
+  # Backend Service
+  - type: web
+    name: dark-circles-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+    disk:
+      name: model-storage
+      mountPath: /app
+      sizeGB: 1
+
+  # Frontend Service
+  - type: web
+    name: dark-circles-frontend
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: starter
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: dark-circles-backend
+          property: host
