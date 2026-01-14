@@ -7,7 +7,7 @@ import ResultsDisplay from './components/ResultsDisplay';
 import LoadingSpinner from './components/LoadingSpinner';
 import CameraCapture from './components/CameraCapture';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://rotation-augmentation-1.onrender.com';
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
